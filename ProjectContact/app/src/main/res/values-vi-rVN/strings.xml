@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Danh bạ</string>
+    <string name="themdanhba">Thêm danh bạ</string>
+    <string name="tenll">Tên</string>
+    <string name="sodt">Số điện thoại</string>
+    <string name="guitn">Gửi tới</string>
+    <string name="noidung">Nội dung</string>
+    <string name="gui">Gửi</string>
+    <string name="thongtinll">Thông tin liên lạc</string>
+    <string name="luu">Lưu</string>
+</resources>

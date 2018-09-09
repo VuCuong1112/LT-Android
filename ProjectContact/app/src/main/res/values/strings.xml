@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Contact</string>
+    <string name="themdanhba">Add Contact</string>
+    <string name="tenll">Name</string>
+    <string name="sodt">Number phone</string>
+    <string name="thongtinll">Contact information</string>
+    <string name="guitn">Send to</string>
+    <string name="noidung">Context</string>
+    <string name="gui">Send</string>
+    <string name="luu">Save</string>
+
+</resources>

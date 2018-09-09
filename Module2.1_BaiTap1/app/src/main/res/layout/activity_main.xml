@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.vucuong.module21_baitap1.MainActivity">
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@android:color/holo_green_light"
+       android:text="Các kiểu lập trình sự kiện"
+       android:textAlignment="center"
+       android:textColorLink="@android:color/background_light" />
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="12dp"
+          android:text="Số a:"/>
+      <Space
+          android:layout_width="30dp"
+          android:layout_height="wrap_content" />
+      <EditText
+          android:layout_width="match_parent"
+          android:id="@+id/txtA"
+          android:layout_height="wrap_content" />
+   </LinearLayout>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="12dp"
+          android:text="Số b:"/>
+      <Space
+          android:layout_width="30dp"
+          android:layout_height="wrap_content" />
+      <EditText
+          android:layout_width="match_parent"
+          android:id="@+id/txtB"
+          android:layout_height="wrap_content" />
+   </LinearLayout>
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@android:color/holo_green_light"
+       android:text="0"
+       android:textAlignment="center"
+       android:id="@+id/txtResult"
+       android:textColorLink="@android:color/background_light"/>
+
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Tổng 2 số"
+       android:layout_margin="12dp"
+       android:id="@+id/btnTong"/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="12dp"
+       android:text="Hiệu 2 số"
+       android:id="@+id/btnHieu"/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_margin="12dp"
+       android:layout_height="wrap_content"
+       android:text="Tích 2 số"
+       android:id="@+id/btnTich"/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="12dp"
+       android:text="Thương 2 số"
+       android:id="@+id/btnThuong"/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="12dp"
+       android:text="Ước số chung lớn nhất"
+       android:id="@+id/btnUocSCLN"/>
+
+   <Button
+       android:id="@+id/btnThoat"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Thoát chương trình"
+       android:textColor="@android:color/holo_red_dark" />
+</LinearLayout>
