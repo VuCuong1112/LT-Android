@@ -1,5 +1,8 @@
 package com.android.doan.datban;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.app.Activity;
 import android.widget.GridView;
@@ -8,14 +11,13 @@ import android.widget.TabHost;
 
 import com.android.doan.datban.adapter.AdapterBan;
 import com.android.doan.datban.adapter.AdapterMonAn;
-import com.android.doan.datban.control.DBManager;
 import com.android.doan.datban.entity.Ban;
 import com.android.doan.datban.entity.MonAn;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends Activity {
-    DBManager database;
     TabHost tabHost;
     GridView gvBan;
     ArrayList<Ban> dsBan;
@@ -24,13 +26,12 @@ public class MainActivity extends Activity {
     ListView lvMonAn;
     ArrayList<MonAn> dsMonAn;
     AdapterMonAn adapterMonAn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        database=new DBManager(this);
+       // database=new DBManager(this);
         tabHost=(TabHost) findViewById(R.id.tabhost);
         tabHost.setup();
         TabHost.TabSpec tabDatMon=tabHost.newTabSpec("tabDatMon");
@@ -57,9 +58,17 @@ public class MainActivity extends Activity {
     private void addControllTab2() {
         lvMonAn=(ListView) findViewById(R.id.mh3_lvMonAn);
         dsMonAn=new ArrayList<>();
-        dsMonAn.add(new MonAn(1,"cafe",15000,"thức uống",R.drawable.cafe_da));
-        dsMonAn.add(new MonAn(2,"Trà sữa trân châu",50000,"Trà sữa",R.drawable.ts_tranchau));
-        dsMonAn.add(new MonAn(3,"Cua rang me",150000,"Món ăn",R.drawable.cua_rang_me));
+        Drawable hinh1=getResources().getDrawable(R.drawable.cafe_da);
+        byte[] anh1=convertDrawableToByte(hinh1);
+
+        Drawable hinh2=getResources().getDrawable(R.drawable.ts_tranchau);
+        byte[] anh2=convertDrawableToByte(hinh2);
+
+        Drawable hinh3=getResources().getDrawable(R.drawable.cua_rang_me);
+        byte[] anh3=convertDrawableToByte(hinh3);
+        dsMonAn.add(new MonAn(1,"cafe",1,15000,anh1));
+        dsMonAn.add(new MonAn(2,"Trà sữa trân châu",2,50000,anh2));
+        dsMonAn.add(new MonAn(3,"Cua rang me",3,150000,anh3));
         adapterMonAn=new AdapterMonAn(this,R.layout.item_listview_mon_an,dsMonAn);
         lvMonAn.setAdapter(adapterMonAn);
 
@@ -76,5 +85,13 @@ public class MainActivity extends Activity {
         dsBan.add(new Ban(6, 2));
         adapter = new AdapterBan(this, R.layout.item_gridview_ban, dsBan);
         gvBan.setAdapter(adapter);
+    }
+    public byte[] convertDrawableToByte(Drawable drawable){
+        BitmapDrawable bitmapDrawable= (BitmapDrawable) drawable;
+        Bitmap bitmap=bitmapDrawable.getBitmap();
+        ByteArrayOutputStream byteArray=new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG,100,byteArray);
+        byte[] hinhAnh=byteArray.toByteArray();
+        return hinhAnh;
     }
 }

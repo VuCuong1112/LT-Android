@@ -7,15 +7,25 @@ import java.io.Serializable;
 public class MonAn implements Serializable{
     private int maMon;
     private String tenMon;
+    private int maLoai;
     private double donGia;
-    private String loaiMon;
-    private int hinhAnh;
+    private byte[] hinhAnh;
 
-    public MonAn(int maMon, String tenMon, double donGia, String loaiMon, int hinhAnh) {
+    public MonAn() {
+    }
+
+    public MonAn(int maMon, String tenMon, int maLoai, double donGia) {
         this.maMon = maMon;
         this.tenMon = tenMon;
+        this.maLoai = maLoai;
         this.donGia = donGia;
-        this.loaiMon = loaiMon;
+    }
+
+    public MonAn(int maMon, String tenMon, int maLoai, double donGia, byte[] hinhAnh) {
+        this.maMon = maMon;
+        this.tenMon = tenMon;
+        this.maLoai = maLoai;
+        this.donGia = donGia;
         this.hinhAnh = hinhAnh;
     }
 
@@ -35,6 +45,14 @@ public class MonAn implements Serializable{
         this.tenMon = tenMon;
     }
 
+    public int getMaLoai() {
+        return maLoai;
+    }
+
+    public void setMaLoai(int maLoai) {
+        this.maLoai = maLoai;
+    }
+
     public double getDonGia() {
         return donGia;
     }
@@ -43,19 +61,11 @@ public class MonAn implements Serializable{
         this.donGia = donGia;
     }
 
-    public String getLoaiMon() {
-        return loaiMon;
-    }
-
-    public void setLoaiMon(String loaiMon) {
-        this.loaiMon = loaiMon;
-    }
-
-    public int getHinhAnh() {
+    public byte[] getHinhAnh() {
         return hinhAnh;
     }
 
-    public void setHinhAnh(int hinhAnh) {
+    public void setHinhAnh(byte[] hinhAnh) {
         this.hinhAnh = hinhAnh;
     }
 }
